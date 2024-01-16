@@ -48,7 +48,7 @@
         <form class="row g-3">
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
+                <input type="email" class="form-control" id="inputEmail4" placeholder="yourbusiness@email.com">
             </div>
             <div class="col-md-6">
                 <label for="inputPassword4" class="form-label">Password</label>
@@ -62,13 +62,17 @@
                     </label>
                 </div>
             </div>
+            <div class="col-12" id="businessTitleConditional">
+                <label for="businessTitle" class="form-label">Business Title</label>
+                <input type="text" class="form-control" id="businessTitle" placeholder="CrochetCuties">
+            </div>
             <div class="col-12" id="addressConditional">
                 <label for="inputAddress" class="form-label">Address</label>
                 <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
             </div>
             <div class="mb-3 col-12" id="businessDescriptionConditional">
                 <label for="businessDescriptionTextArea" class="form-label">Business Description</label>
-                <textarea class="form-control" id="businessDescriptionTextArea" rows="3"></textarea>
+                <textarea class="form-control" id="businessDescriptionTextArea" rows="3" placeholder="Offers small crochet keychains, and plushies."></textarea>
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Log In / Sign Up</button>
@@ -84,14 +88,16 @@
             var signUpCheckBox = document.getElementById('signUpCheckBox');
             var addressConditional = document.getElementById('addressConditional');
             var businessDescriptionConditional = document.getElementById('businessDescriptionConditional');
+            var businessTitleConditional = document.getElementById('businessTitleConditional');
 
             // Check if elements are found
-            if (!signUpCheckBox || !addressConditional || !businessDescriptionConditional) {
+            if (!signUpCheckBox || !addressConditional || !businessDescriptionConditional || !businessTitleConditional) {
                 console.error('One or more elements not found. Check your element IDs.');
                 return;
             }
             addressConditional.style.display = 'none';
             businessDescriptionConditional.style.display = 'none';
+            businessTitleConditional.style.display = 'none';
             signUpCheckBox.addEventListener('change', function () {
                 console.log('Checkbox state changed');
 
@@ -99,10 +105,12 @@
                     console.log('Checkbox is unchecked');
                     addressConditional.style.display = 'none';
                     businessDescriptionConditional.style.display = 'none';
+                    businessTitleConditional.style.display = 'none';
                 } else {
                     console.log('Checkbox is checked');
                     addressConditional.style.display = 'block';
                     businessDescriptionConditional.style.display = 'block';
+                    businessTitleConditional.style.display = 'block';
                 }
             });
         });
