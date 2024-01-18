@@ -38,7 +38,7 @@ router.get('/displayData', async (req, res) => {
     const data = await fetchData();
 
     // Render the view with MongoDB data
-    res.render(Experimenting, { data });
+    res.render(index, { data });
   } catch (error) {
     // Handle errors here
     res.status(500).send('Internal Server Error');
