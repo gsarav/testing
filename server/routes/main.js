@@ -7,7 +7,6 @@ const Business = require('../models/Business');
 router.get('/', async(req, res) => {
   try {
     const data = await Business.find({});
-    console.log(data);
     res.render('index', {data});
   } catch (error){
     console.log(error);
