@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 app.use('/css', express.static('UMDConnect/node_modules/bootstrap/dist/css'));
 app.use('/', require('./server/routes/main'));
 
-//Listening on port 3000
+//Listening on port 3001
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
