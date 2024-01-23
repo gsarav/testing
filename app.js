@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Connect to MongoDB
-const connectDB = require('/Users/gitikasaravanan/Desktop/UMDConnect-2024/server/config/db');
+const connectDB = require('./server/config/db');
 connectDB();
 
 // Templating Engine 
